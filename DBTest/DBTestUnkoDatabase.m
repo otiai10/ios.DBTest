@@ -32,12 +32,14 @@ static DBTestUnkoDatabase *_singletonInstance;
     // sqlite3_open!!!!!!!!!!!!!
     if (sqlite3_open([sqLiteDb UTF8String], &_singletonInstance) != SQLITE_OK) {
         NSLog(@"えええええええええなんかsqlite開けなかったんだけどー(；´Д｀)");
+        NSLog(@"%s", sqlite3_errmsg(_singletonInstance));
     }
     return self;
 }
 
 // 引数なしでござる〜
 -(NSArray *)unkoInfos {
+    [self prepare];
     NSMutableArray *unkos = [[NSMutableArray alloc] init];
     // あーやっとSQLっぽいところまでたどりついたε-(´∀｀*)ﾎｯ
     NSString *query = @"SELECT * FROM unkos ORDER BY uid DESC";
@@ -45,6 +47,7 @@ static DBTestUnkoDatabase *_singletonInstance;
     
     if (sqlite3_prepare_v2(_singletonInstance, [query UTF8String], -1, &statement, nil) != SQLITE_OK) {
         NSLog(@"おおおおおおおおおおsqlite準備できなかったんだけどー");
+        NSLog(@"%s", sqlite3_errmsg(_singletonInstance));
     } else {
         while(sqlite3_step(statement) == SQLITE_ROW) {
             int uid = sqlite3_column_int(statement, 0);
@@ -63,7 +66,7 @@ static DBTestUnkoDatabase *_singletonInstance;
 
 // とりあえずCREATE TABLE IF NOT EXISTSするメソッドつくる
 -(DBTestUnkoDatabase*)prepare {
-    NSString *query = @"CREATE TABLE IF NOT EXISTS unkos (uid INTEGER, ownerName TEXT";
+    NSString *query = @"CREATE TABLE IF NOT EXISTS unkos (uid INTEGER, ownerName TEXT)";
     sqlite3_stmt *statement;
     
     sqlite3_prepare_v2(_singletonInstance, [query UTF8String], -1, &statement, nil);
