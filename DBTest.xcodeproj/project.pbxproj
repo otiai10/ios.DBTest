@@ -21,6 +21,8 @@
 		586571A8186BD3E7000E7A4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5865718A186BD3E7000E7A4E /* UIKit.framework */; };
 		586571B0186BD3E7000E7A4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586571AE186BD3E7000E7A4E /* InfoPlist.strings */; };
 		586571B2186BD3E7000E7A4E /* DBTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 586571B1186BD3E7000E7A4E /* DBTestTests.m */; };
+		586571BD186BD99F000E7A4E /* DBTestUnkoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 586571BC186BD99F000E7A4E /* DBTestUnkoInfo.m */; };
+		586571C0186BDC92000E7A4E /* DBTestUnkoDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 586571BF186BDC92000E7A4E /* DBTestUnkoDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		586571AD186BD3E7000E7A4E /* DBTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DBTestTests-Info.plist"; sourceTree = "<group>"; };
 		586571AF186BD3E7000E7A4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		586571B1186BD3E7000E7A4E /* DBTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBTestTests.m; sourceTree = "<group>"; };
+		586571BB186BD83E000E7A4E /* DBTestUnkoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTestUnkoInfo.h; sourceTree = "<group>"; };
+		586571BC186BD99F000E7A4E /* DBTestUnkoInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTestUnkoInfo.m; sourceTree = "<group>"; };
+		586571BE186BDBDC000E7A4E /* DBTestUnkoDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTestUnkoDatabase.h; sourceTree = "<group>"; };
+		586571BF186BDC92000E7A4E /* DBTestUnkoDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTestUnkoDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				5865719C186BD3E7000E7A4E /* DBTestViewController.m */,
 				5865719E186BD3E7000E7A4E /* Images.xcassets */,
 				5865718D186BD3E7000E7A4E /* Supporting Files */,
+				586571BB186BD83E000E7A4E /* DBTestUnkoInfo.h */,
+				586571BC186BD99F000E7A4E /* DBTestUnkoInfo.m */,
+				586571BE186BDBDC000E7A4E /* DBTestUnkoDatabase.h */,
+				586571BF186BDC92000E7A4E /* DBTestUnkoDatabase.m */,
 			);
 			path = DBTest;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 			files = (
 				58657197186BD3E7000E7A4E /* DBTestAppDelegate.m in Sources */,
 				5865719D186BD3E7000E7A4E /* DBTestViewController.m in Sources */,
+				586571C0186BDC92000E7A4E /* DBTestUnkoDatabase.m in Sources */,
+				586571BD186BD99F000E7A4E /* DBTestUnkoInfo.m in Sources */,
 				58657193186BD3E7000E7A4E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
