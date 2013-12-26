@@ -40,7 +40,7 @@ static DBTestUnkoDatabase *_singletonInstance;
 -(NSArray *)unkoInfos {
     NSMutableArray *unkos = [[NSMutableArray alloc] init];
     // あーやっとSQLっぽいところまでたどりついたε-(´∀｀*)ﾎｯ
-    NSString *query = @"SLELCT * FROM unkos ORDER BY uid DESC";
+    NSString *query = @"SELECT * FROM unkos ORDER BY uid DESC";
     sqlite3_stmt *statement;
     
     if (sqlite3_prepare_v2(_singletonInstance, [query UTF8String], -1, &statement, nil) != SQLITE_OK) {
