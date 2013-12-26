@@ -8,6 +8,10 @@
 
 #import "DBTestViewController.h"
 
+// 自作したDBアクセサを使うために必要な.hファイルをimport
+#import "DBTestUnkoInfo.h"
+#import "DBTestUnkoDatabase.h"
+
 @interface DBTestViewController ()
 
 @end
@@ -18,6 +22,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // 自作DBアクセサのSELECTのラッパーメソッドを呼ぶ
+    NSArray *unkoInfos = [[DBTestUnkoDatabase myDatabase] unkoInfos];
+    for (DBTestUnkoInfo *info in unkoInfos) {
+        NSLog(@"うんこのユニークID\t%d\nうんこのオーナーさん\t%@", info.uid, info.ownerName);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
