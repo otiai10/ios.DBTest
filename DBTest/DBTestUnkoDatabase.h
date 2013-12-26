@@ -21,4 +21,6 @@
 -(NSArray *)unkoInfos;
 -(DBTestUnkoDatabase*)prepare;
 
+-(void)addUnkoWithName:(NSString*)name;
+
 @end

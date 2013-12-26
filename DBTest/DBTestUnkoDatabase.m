@@ -76,4 +76,15 @@ static DBTestUnkoDatabase *_singletonInstance;
     return self;
 }
 
+// テストデータ入れるメソッド
+-(void)addUnkoWithName:(NSString*) name {
+    [self prepare];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO unkos VALUES(7, \"%@\")", name];
+    sqlite3_stmt *statement;
+    
+    sqlite3_prepare_v2(_singletonInstance, [query UTF8String], -1, &statement, nil);
+    sqlite3_step(statement);
+    sqlite3_finalize(statement);
+}
+
 @end

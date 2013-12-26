@@ -23,10 +23,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // 自作DBアクセサのINSERTのラッパーメソッド呼ぶ
+    [[DBTestUnkoDatabase myDatabase] addUnkoWithName:@"Unkle John"];
+    
     // 自作DBアクセサのSELECTのラッパーメソッドを呼ぶ
     NSArray *unkoInfos = [[DBTestUnkoDatabase myDatabase] unkoInfos];
     for (DBTestUnkoInfo *info in unkoInfos) {
-        NSLog(@"うんこのユニークID\t%d\nうんこのオーナーさん\t%@", info.uid, info.ownerName);
+        NSLog(@"\nうんこのユニークID\t%d\tうんこのオーナーさん\t%@", info.uid, info.ownerName);
     }
     
 }
