@@ -19,5 +19,6 @@
 
 +(DBTestUnkoDatabase*)myDatabase;
 -(NSArray *)unkoInfos;
+-(DBTestUnkoDatabase*)prepare;
 
 @end

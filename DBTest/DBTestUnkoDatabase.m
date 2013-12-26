@@ -61,4 +61,16 @@ static DBTestUnkoDatabase *_singletonInstance;
     return unkos;
 }
 
+// とりあえずCREATE TABLE IF NOT EXISTSするメソッドつくる
+-(DBTestUnkoDatabase*)prepare {
+    NSString *query = @"CREATE TABLE IF NOT EXISTS unkos (uid INTEGER, ownerName TEXT";
+    sqlite3_stmt *statement;
+    
+    sqlite3_prepare_v2(_singletonInstance, [query UTF8String], -1, &statement, nil);
+    sqlite3_step(statement);
+    sqlite3_finalize(statement);
+    
+    return self;
+}
+
 @end
